@@ -1,7 +1,9 @@
 const express = require('express');
 
 const router = express.Router();
-const bcrypt = require('bcryptjs')
+const bcrypt = require('bcryptjs');
+
+
 
 //user Model
 const User = require('../models/User');
@@ -69,6 +71,7 @@ router.post('/register', (req, res) => {
               newUser.password = hash;
               newUser.save()
                 .then( user =>{
+                  req.flash('success_msg', 'You are now Registered and can Log in!')
                   res.redirect('/users/login');
                 })
                 .catch(err => console.log(err));
