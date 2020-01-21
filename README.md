@@ -1,2 +1,2 @@
-# passport_authentication_node_js
+# Authentication using Passport.js
 Implementing passport authentication to node js application.
